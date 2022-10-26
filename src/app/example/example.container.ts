@@ -1,6 +1,8 @@
 import { container } from 'inversify-props';
 import { ExampleAlertService, IExampleAlertService } from './shared';
 
-export default () => {
+const ExampleContainer = () => {
   container.addSingleton<IExampleAlertService>(ExampleAlertService);
 };
+
+export default ExampleContainer;

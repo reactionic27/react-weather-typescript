@@ -1,5 +1,5 @@
 import { cid, useInject } from 'inversify-hooks';
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import { useTranslation } from 'react-i18next';
 import { useExample } from '~/app/shared/example';

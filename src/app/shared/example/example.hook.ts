@@ -1,4 +1,4 @@
-import { useExampleStore, ExampleStoreType } from '~/store';
+import { ExampleStoreType, useExampleStore } from '~/store';
 
 export function useExample() {
   // You can use stores directly form components, this is only an example of hook
