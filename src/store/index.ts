@@ -6,10 +6,9 @@ import {
 } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import thunk, { ThunkDispatch } from "redux-thunk";
-
+import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 import weatherReducer from "./reducers/weatherReducers";
 import alertReducer from "./reducers/alertReducer";
-import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 
 const rootReducer = combineReducers({
   weather: weatherReducer,
