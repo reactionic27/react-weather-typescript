@@ -10,6 +10,12 @@ export interface Weather {
   main: string;
 }
 
+export interface City {
+  name: string;
+  latitude: number;
+  longitude: number;
+}
+
 export interface WeatherData {
   base: string;
   clouds: {

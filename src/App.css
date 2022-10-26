@@ -1,7 +1,62 @@
 body {
   margin: 0;
+  font-family: "Open Sans", sans-serif;
 }
 .app-container {
   background: #eef6fb;
   height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.app-container .header {
+  display: flex;
+  flex-direction: row;
+  margin-top: 32px;
+}
+.app-container .header .item {
+  padding: 10px 30px;
+}
+.app-container .header .item span {
+  text-transform: uppercase;
+  color: #333339;
+  cursor: pointer;
+  font-size: 24px;
+  font-weight: lighter;
+}
+.app-container .header .item .active {
+  color: #5fb0e8;
+  font-weight: bold;
+}
+.app-container .main-content {
+  width: 800px;
+  height: 600px;
+  margin-top: 16px;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 8px;
+}
+.app-container .main-content .today-widget {
+  height: 350px;
+  background: #eef6fb;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+.app-container .main-content .weekly-widget {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 8px;
+}
+.app-container .main-content .weekly-widget .day-widget {
+  background: #eef6fb;
+  width: 196px;
+  height: 240px;
+  margin-right: 8px;
+}
+.app-container .main-content .weekly-widget .day-widget:first-of-type {
+  border-bottom-left-radius: 16px;
+}
+.app-container .main-content .weekly-widget .day-widget:last-of-type {
+  margin-right: 0px;
+  border-bottom-right-radius: 16px;
 }
