@@ -7,19 +7,16 @@ import {
   GET_WEATHER,
   SET_LOADING,
   SET_ERROR,
+  City,
 } from "../types";
 
 export const getForcast = (
-  city: string
+  city: City
 ): ThunkAction<void, RootState, null, WeatherAction> => {
   return async (dispatch) => {
-    const ottawaCoordinate = {
-      lon: -75.695,
-      lat: 45.424721,
-    };
     try {
       const res = await fetch(
-        `https://api.openweathermap.org/data/2.5/onecall?lat=${ottawaCoordinate.lat}&lon=${ottawaCoordinate.lon}&exclude=minutely,hourly,alerts&appid=${process.env.REACT_APP_API_KEY}&units=imperial`
+        `https://api.openweathermap.org/data/2.5/onecall?lat=${city.latitude}&lon=${city.longitude}&exclude=minutely,hourly,alerts&appid=${process.env.REACT_APP_API_KEY}&units=imperial`
       );
 
       if (!res.ok) {

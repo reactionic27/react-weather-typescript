@@ -41,6 +41,31 @@ body {
   background: #eef6fb;
   border-top-left-radius: 16px;
   border-top-right-radius: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.app-container .main-content .today-widget .wrapper {
+  display: flex;
+  margin-top: 24px;
+}
+.app-container .main-content .today-widget .wrapper .icon-view {
+  width: 100px;
+  height: 100px;
+  background: #5fb0e8;
+}
+.app-container .main-content .today-widget .wrapper .text-view {
+  margin-left: 20px;
+}
+.app-container .main-content .today-widget .wrapper .text-view .temerature-text {
+  font-size: 48px;
+  color: #333339;
+}
+.app-container .main-content .main-text {
+  font-size: 32px;
+  font-weight: 100;
+  color: #333339;
 }
 .app-container .main-content .weekly-widget {
   display: flex;
@@ -52,6 +77,9 @@ body {
   width: 196px;
   height: 240px;
   margin-right: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .app-container .main-content .weekly-widget .day-widget:first-of-type {
   border-bottom-left-radius: 16px;

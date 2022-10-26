@@ -46,6 +46,31 @@ body {
       background: @firstColor;
       border-top-left-radius: 16px;
       border-top-right-radius: 16px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      .wrapper {
+        display: flex;
+        margin-top: 24px;
+        .icon-view {
+          width: 100px;
+          height: 100px;
+          background: @thirdColor;
+        }
+        .text-view {
+          margin-left: 20px;
+          .temerature-text {
+            font-size: 48px;
+            color: @secondColor;
+          }
+        }
+      }
+    }
+    .main-text {
+      font-size: 32px;
+      font-weight: 100;
+      color: @secondColor;
     }
     .weekly-widget {
       display: flex;
@@ -56,6 +81,9 @@ body {
         width: 196px;
         height: 240px;
         margin-right: 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         &:first-of-type {
           border-bottom-left-radius: 16px;
         }
