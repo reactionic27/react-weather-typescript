@@ -1,12 +1,12 @@
-import React, { FC } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from './store';
-import Search from './components/Search';
-import Alert from './components/Alert';
-import Weather from './components/Weather';
-import { setAlert } from './store/actions/alertAction';
-import { setError } from './store/actions/weatherAction';
-import './App.css';
+import React, { FC } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "./store";
+import Search from "./components/Search";
+import Alert from "./components/Alert";
+import Weather from "./components/Weather";
+import { setAlert } from "./store/actions/alertAction";
+import { setError } from "./store/actions/weatherAction";
+import "./App.css";
 
 const App: FC = () => {
   const dispatch = useDispatch();
@@ -18,12 +18,18 @@ const App: FC = () => {
   return (
     <div className="has-text-centered">
       <Search title="Enter city name and press the search button" />
-      {loading ? <h2 className="is-size-3 py-2">Loading...</h2> : weatherData && <Weather data={weatherData} />}
+      {loading ? (
+        <h2 className="is-size-3 py-2">Loading...</h2>
+      ) : (
+        weatherData && <Weather data={weatherData} />
+      )}
 
-      {alertMsg && <Alert message={alertMsg} onClose={() => dispatch(setAlert(''))}/>}
+      {alertMsg && (
+        <Alert message={alertMsg} onClose={() => dispatch(setAlert(""))} />
+      )}
       {error && <Alert message={error} onClose={() => dispatch(setError())} />}
     </div>
   );
-}
+};
 
 export default App;

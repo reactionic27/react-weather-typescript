@@ -1,18 +1,32 @@
-import { applyMiddleware, combineReducers, createStore } from 'redux';
-import { composeWithDevTools } from 'redux-devtools-extension';
-import thunk from 'redux-thunk';
+import {
+  AnyAction,
+  applyMiddleware,
+  combineReducers,
+  legacy_createStore as createStore,
+} from "redux";
+import { composeWithDevTools } from "redux-devtools-extension";
+import thunk, { ThunkDispatch } from "redux-thunk";
 
-import weatherReducer from './reducers/weatherReducers';
-import alertReducer from './reducers/alertReducer';
+import weatherReducer from "./reducers/weatherReducers";
+import alertReducer from "./reducers/alertReducer";
+import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 
 const rootReducer = combineReducers({
-    weather: weatherReducer,
-    alert: alertReducer
+  weather: weatherReducer,
+  alert: alertReducer,
 });
 
+type AppState = ReturnType<typeof rootReducer>;
+
+type TypedDispatch<T> = ThunkDispatch<T, any, AnyAction>;
+
+export const useAppDispatch = () => useDispatch<TypedDispatch<AppState>>();
+
+export const useAppSelector: TypedUseSelectorHook<AppState> = useSelector;
+
 const store = createStore(
-    rootReducer,
-    composeWithDevTools(applyMiddleware(thunk))
+  rootReducer,
+  composeWithDevTools(applyMiddleware(thunk))
 );
 
 export type RootState = ReturnType<typeof rootReducer>;
