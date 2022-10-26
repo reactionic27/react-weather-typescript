@@ -1,28 +1,11 @@
 import React, { FC, useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import { RootState, useAppDispatch } from "./store";
 import { getForcast } from "./store/actions/weatherAction";
 import { City } from "./store/types";
-import "./App.css";
-import { useSelector } from "react-redux";
 import { getCelsiusFromFahrenheit, getWeekday } from "./utils";
-
-const cities: City[] = [
-  {
-    name: "Ottawa",
-    latitude: 45.424721,
-    longitude: -75.695,
-  },
-  {
-    name: "Moscow",
-    latitude: 55.751244,
-    longitude: 37.618423,
-  },
-  {
-    name: "Tokyo",
-    latitude: 35.672855,
-    longitude: 139.817413,
-  },
-];
+import { cities } from "./constants";
+import "./App.css";
 
 const App: FC = () => {
   const dispatch = useAppDispatch();
