@@ -16,7 +16,7 @@ const App: FC = () => {
   const alertMsg = useSelector((state: RootState) => state.alert.message);
 
   return (
-    <div className="has-text-centered">
+    <div className="container">
       <Search title="Enter city name and press the search button" />
       {loading ? (
         <h2 className="is-size-3 py-2">Loading...</h2>
