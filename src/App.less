@@ -53,6 +53,7 @@ body {
       .wrapper {
         display: flex;
         margin-top: 24px;
+        align-items: center;
         .icon-view {
           width: 100px;
           height: 100px;
@@ -72,6 +73,11 @@ body {
       font-weight: 100;
       color: @secondColor;
     }
+    .secondary-text {
+      font-size: 24px;
+      font-weight: 100;
+      color: @secondColor;
+    }
     .weekly-widget {
       display: flex;
       justify-content: space-around;
@@ -84,12 +90,25 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
+        flex-direction: column;
         &:first-of-type {
           border-bottom-left-radius: 16px;
         }
         &:last-of-type {
           margin-right: 0px;
           border-bottom-right-radius: 16px;
+        }
+        .icon {
+          width: 50px;
+          height: 50px;
+          background: @thirdColor;
+          margin-top: 24px;
+        }
+        .text {
+          margin-top: 24px;
+          font-size: 28px;
+          font-weight: 600;
+          color: @secondColor;
         }
       }
     }

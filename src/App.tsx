@@ -4,7 +4,7 @@ import { getForcast } from "./store/actions/weatherAction";
 import { City } from "./store/types";
 import "./App.css";
 import { useSelector } from "react-redux";
-import { getCelsiusFromFahrenheit } from "./utils";
+import { getCelsiusFromFahrenheit, getWeekday } from "./utils";
 
 const cities: City[] = [
   {
@@ -37,8 +37,6 @@ const App: FC = () => {
   const changeCity = (index: number) => {
     setSelectedCity(cities[index]);
   };
-
-  console.log("weatherData =>", weatherData);
 
   return (
     <div className="app-container">
@@ -81,10 +79,28 @@ const App: FC = () => {
               </div>
             </div>
             <div className="weekly-widget">
-              <div className="day-widget">Today Widget</div>
-              <div className="day-widget">Today Widget</div>
-              <div className="day-widget">Today Widget</div>
-              <div className="day-widget">Today Widget</div>
+              {Array.from({ length: 4 }, (_, index) => {
+                return (
+                  <div className="day-widget" key={index}>
+                    <div className="secondary-text">
+                      {getWeekday(weatherData.daily[index + 1].dt)}
+                    </div>
+                    <div className="icon">
+                      <img
+                        src={`http://openweathermap.org/img/wn/${
+                          weatherData.daily[index + 1].weather[0].icon
+                        }.png`}
+                        alt="weather-icon"
+                      />
+                    </div>
+                    <div className="text">
+                      {getCelsiusFromFahrenheit(
+                        weatherData.daily[index + 1].temp.max
+                      )}
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </>

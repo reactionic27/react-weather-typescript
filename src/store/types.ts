@@ -16,11 +16,23 @@ export interface City {
   longitude: number;
 }
 
-export interface WeatherData {
-  current: {
-    weather: Weather[];
-    temp: number;
+export interface CurrentWeather {
+  weather: Weather[];
+  temp: number;
+  dt: number;
+}
+
+export interface DailyWeather {
+  weather: Weather[];
+  temp: {
+    max: number;
   };
+  dt: number;
+}
+
+export interface WeatherData {
+  current: CurrentWeather;
+  daily: DailyWeather[];
 }
 
 export interface WeatherError {
