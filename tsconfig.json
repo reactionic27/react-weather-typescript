@@ -1,5 +1,4 @@
 {
-  "extends": "./tsconfig.paths.json",
   "compilerOptions": {
     "target": "es5",
     "lib": [
@@ -18,19 +17,7 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx",
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
-    "strictPropertyInitialization": false,
-    "strictNullChecks": false,
-    "types": [
-      "jest"
-    ],
-    "typeRoots": [
-      "types",
-      "node_modules/@types"
-    ],
-    "noFallthroughCasesInSwitch": true
+    "jsx": "react"
   },
   "include": [
     "src"

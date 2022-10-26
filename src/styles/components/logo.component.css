@@ -1,5 +1,0 @@
-.logo {
-  &__image {
-    border: rem(4px) solid value($color-basic, bright);
-  }
-}
