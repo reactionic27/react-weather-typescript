@@ -1,7 +1,7 @@
 import React, { FC, FormEvent, useState } from "react";
 import { useAppDispatch } from "../store";
 import { setAlert } from "../store/actions/alertAction";
-import { getWeather, setLoading } from "../store/actions/weatherAction";
+import { getForcast, setLoading } from "../store/actions/weatherAction";
 
 interface SearchProps {
   title: string;
@@ -21,7 +21,7 @@ const Search: FC<SearchProps> = ({ title }) => {
       return dispatch(setAlert("Please enter a city!"));
     }
     dispatch(setLoading());
-    dispatch(getWeather(city));
+    dispatch(getForcast(city));
     setCity("");
   };
 

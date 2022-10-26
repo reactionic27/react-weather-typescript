@@ -1,3 +1,7 @@
-.container {
-  margin-bottom: 50px !important;
+body {
+  margin: 0;
+}
+.app-container {
+  background: #eef6fb;
+  height: 100vh;
 }
