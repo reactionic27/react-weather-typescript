@@ -15,19 +15,17 @@ const rootReducer = combineReducers({
   alert: alertReducer,
 });
 
-type AppState = ReturnType<typeof rootReducer>;
-
-type TypedDispatch<T> = ThunkDispatch<T, any, AnyAction>;
-
-export const useAppDispatch = () => useDispatch<TypedDispatch<AppState>>();
-
-export const useAppSelector: TypedUseSelectorHook<AppState> = useSelector;
-
 const store = createStore(
   rootReducer,
   composeWithDevTools(applyMiddleware(thunk))
 );
 
+export default store;
+
 export type RootState = ReturnType<typeof rootReducer>;
 
-export default store;
+type TypedDispatch<T> = ThunkDispatch<T, any, AnyAction>;
+
+export const useAppDispatch = () => useDispatch<TypedDispatch<RootState>>();
+
+export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
