@@ -13,22 +13,32 @@ body {
 
 .app-container {
   background: @firstColor;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   flex-direction: column;
+  @media (max-width: @mobileBreakPoint) {
+    width: 100%;
+    height: unset;
+  }
   .header {
     display: flex;
     flex-direction: row;
     margin-top: 32px;
     .item {
       padding: 10px 30px;
+      @media (max-width: @mobileBreakPoint) {
+        padding: 10px;
+      }
       span {
         text-transform: uppercase;
         color: @secondColor;
         cursor: pointer;
         font-size: 24px;
         font-weight: lighter;
+        @media (max-width: @mobileBreakPoint) {
+          font-size: 16px;
+        }
       }
       .active {
         color: @thirdColor;
@@ -46,6 +56,12 @@ body {
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03), 0 2px 4px rgba(0, 0, 0, 0.03),
       0 4px 8px rgba(0, 0, 0, 0.03), 0 8px 16px rgba(0, 0, 0, 0.03),
       0 16px 32px rgba(0, 0, 0, 0.03), 0 32px 64px rgba(0, 0, 0, 0.03);
+    @media (max-width: @mobileBreakPoint) {
+      width: 90%;
+      height: unset;
+      padding-bottom: 20px;
+      margin-bottom: 20px;
+    }
     .today-widget {
       height: 350px;
       background: @firstColor;
@@ -87,6 +103,10 @@ body {
       display: flex;
       justify-content: space-around;
       margin-top: 8px;
+      @media (max-width: @mobileBreakPoint) {
+        flex-direction: column;
+        margin-top: 0px;
+      }
       .day-widget {
         background: @firstColor;
         width: 196px;
@@ -96,6 +116,11 @@ body {
         justify-content: center;
         align-items: center;
         flex-direction: column;
+        @media (max-width: @mobileBreakPoint) {
+          width: 100%;
+          margin-top: 10px;
+          margin-right: 0px;
+        }
         &:first-of-type {
           border-bottom-left-radius: @defaultGap;
         }
